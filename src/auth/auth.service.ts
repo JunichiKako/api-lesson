@@ -19,7 +19,7 @@ export class AuthService {
       await this.prisma.user.create({
         data: {
           email: dto.email,
-          hasshedPassword: hashedPassword,
+          hashedPassword: hashedPassword,
         },
       });
       return { message: 'ユーザー登録に成功しました' };
@@ -42,7 +42,7 @@ export class AuthService {
 
     const isPasswordValid = await bcrypt.compare(
       dto.password,
-      user.hasshedPassword,
+      user.hashedPassword,
     );
 
     if (!isPasswordValid)
