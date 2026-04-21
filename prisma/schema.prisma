@@ -16,8 +16,8 @@ datasource db {
 
 model User {
   id   Int     @id @default(autoincrement())
-  createAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   email String  @unique
   hashedPassword String
   nickname String?
@@ -26,8 +26,8 @@ model User {
 
 model Task {
   id   Int     @id @default(autoincrement())
-  createAt DateTime @default(now())
-  updateAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   title String
   description String?
   userId Int 
